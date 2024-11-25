@@ -1,0 +1,75 @@
+ /* Loader container */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  /* Cloud animation */
+  .cloud {
+    width: 100px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.8;
+    animation: moveCloud 6s linear infinite;
+  }
+  
+  .cloud:nth-child(1) {
+    left: -120px;
+    top: 50%;
+    animation-delay: 0s;
+  }
+  
+  .cloud:nth-child(2) {
+    left: 50%;
+    top: 40%;
+    animation-delay: 2s;
+  }
+  
+  .cloud:nth-child(3) {
+    left: 80%;
+    top: 30%;
+    animation-delay: 4s;
+  }
+  
+  /* Cloud movement animation */
+  @keyframes moveCloud {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(100vw) translateY(0); }
+  }
+  
+  /* Text container */
+  .text-container {
+    text-align: center;
+    color: #333;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+  
+  /* Main Text Style */
+  .main-text {
+    font-family: 'Georgia', serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Sub Text Style */
+  .sub-text {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: capitalize;
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liza Atieno's Graduation Celebration</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay">
+      <h1 class="hero-title">Celebrating Liza Atieno</h1>
+      <p class="hero-subtitle">An Evening of Elegance and Splendor</p>
+      <div class="cloud-containe">
+        <div class="cloud reveal-cloud">
+          <span class="cloud-text">Step into Elegance</span>
+        </div>
+        <div class="cloud reveal-cloud">
+          <span class="cloud-text">Honoring Liza Atieno</span>
+        </div>
+        <div class="cloud reveal-cloud">
+          <span class="cloud-text">A Night to Remember</span>
+        </div>
+      </div>
+      <p class="floating-text">Under the stars in <em>DELTA PLAINS, SABAKI</em>, toast to her brilliance.</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+ <!-- Journey Section -->
+ <section id="journey" class="fade-in">
+    <h2 class="section-title"> Applaud Her Law School Odyssey</h2>
+    <div class="journey-content">
+      <div class="video-container">
+        <video id="journeyVideo" class="journey-video" loop>
+          <source src="journey2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="journey-description">With unwavering determination and a relentless spirit, she faced every challenge and emerged victorious. Her journey through law school has been nothing short of spectacular, a true display of perseverance and hard work. Join us as we celebrate the culmination of her dreams—let the fireworks light up the sky in honor of this remarkable achievement. Together, we applaud her success!</p>
+    </div>
+  </section>
+  
+  
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="fade-in">
+      <h2 class="section-title">Cherished Memories</h2>
+      <div class="gallery">
+        <img src="victorian2.jpeg" alt="Memory 1" class="gallery-item">
+        <img src="victorian2.jpeg" alt="Memory 2" class="gallery-item">
+        <img src="victorian2.jpeg" alt="Memory 3" class="gallery-item">
+      </div>
+      <p class="gallery-caption">Join us in Moments to be  etched in time, captured forever.</p>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="fade-in">
+      <h2 class="section-title">RSVP to the Celebration</h2>
+      <form id="rsvp-form" class="rsvp-form">
+        <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+        <select name="response" class="form-select" required>
+          <option value="" disabled selected>Will you join us?</option>
+          <option value="attending">I’ll be there!</option>
+          <option value="not-attending">Sorry, I can’t make it</option>
+        </select>
+        <textarea name="message" class="form-textarea" placeholder="Add a personal note (optional)"></textarea>
+        <button type="submit" class="form-button">Submit RSVP</button>
+      </form>
+      <p id="response" class="form-response">Your RSVP is greatly appreciated.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-message">"Under the stars, we honor your hard-earned triumph."</p>
+    <p>Made With love, <em>Ggreen</em>.</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    const video = document.getElementById('journeyVideo');
+const videoContainer = document.querySelector('.video-container');
+
+// Initially set the video to be paused and with low volume.
+video.volume = 0.1; // Start with low volume.
+video.pause(); // Ensure video is paused initially.
+
+// Function to start video play after first user interaction.
+const startVideo = () => {
+  video.play(); // Start playing the video after interaction.
+  video.removeEventListener('click', startVideo); // Remove the event listener after the video starts.
+};
+
+// Add an event listener for the first user interaction (click or touch).
+videoContainer.addEventListener('click', startVideo);
+videoContainer.addEventListener('touchstart', startVideo);  // Mobile touch event
+
+// Volume control on hover or touch
+const handleHoverIn = () => {
+  video.volume = 1;  // Increase volume when hovered or touched.
+};
+
+const handleHoverOut = () => {
+  video.volume = 0.1;  // Reset volume when unhovered or untapped.
+};
+
+videoContainer.addEventListener('mouseenter', handleHoverIn);
+videoContainer.addEventListener('mouseleave', handleHoverOut);
+
+// Touch event handling for mobile devices
+videoContainer.addEventListener('touchstart', handleHoverIn);  // Increase volume on touch
+videoContainer.addEventListener('touchend', handleHoverOut);  // Reset volume after touch
+
+    </script>
+</body>
+</html>
