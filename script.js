@@ -8,10 +8,12 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   
     // Construct the mailto link
     const subject = `RSVP Confirmation from ${name}`;
-    const body = `Name: ${name}%0AResponse: ${response}%0A%0AMessage:%0A${message}`;
-    const mailtoLink = `mailto:georgeobuya883@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const body = `Name: ${name}          
+Response: ${response}             
+
+Message: ${message}`;
+    const mailtoLink = `mailto:georgeobuya883@gmail.com?cc=owinoliza@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   
     // Trigger the mailto link
     window.location.href = mailtoLink;
-  });
-  
+});
